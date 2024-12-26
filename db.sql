@@ -12,3 +12,9 @@ CREATE TABLE savingAccount(
        	accountNum INT,
       FOREIGN KEY(accountNum) REFERENCES account(accountNum) ON DELETE CASCADE
  );
+CREATE TABLE currentAccount( 
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    sommelimit DECIMAL(15, 2) NOT NULL,
+    accountNum INT,
+    FOREIGN KEY(accountNum) REFERENCES account(accountNum) ON DELETE CASCADE
+    );
