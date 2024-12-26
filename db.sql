@@ -18,3 +18,9 @@ CREATE TABLE currentAccount(
     accountNum INT,
     FOREIGN KEY(accountNum) REFERENCES account(accountNum) ON DELETE CASCADE
     );
+CREATE TABLE businessAccount( 
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      limitCredit DECIMAL(10, 2) NOT NULL,
+      accountNum INT,
+      FOREIGN KEY(accountNum) REFERENCES account(accountNum) ON DELETE CASCADE
+);
