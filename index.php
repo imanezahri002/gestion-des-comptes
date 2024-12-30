@@ -23,6 +23,8 @@ if(isset($_POST["envoyer"])){
    }
 
    $test->creerAcc($conn,$type,$valeur);
+//    $info=new savingAcc($minSolde);
+//    $infos=$info->displaySaving();
 
 }
 ?>

@@ -6,20 +6,16 @@ class account{
     protected $soldeInit;
 
     public function __construct($titulaire, $soldeInit){
-        // $this->accountNum = $accountNum;
         $this->titulaire=$titulaire;
         $this->soldeInit=$soldeInit;
     }
     public function creerAcc($conn, $type,$valeur){
-        // echo $valeur;
-        // echo $type;
         $sql="INSERT INTO account(titulaire,soldeInit) VALUES('$this->titulaire',$this->soldeInit)";
         $stmt=$conn->prepare($sql);
         $stmt->execute();
         $id=$conn->LastInsertID();
         
         if($type=='savingAcc'){
-            
             $rqt1=("INSERT INTO savingaccount (minimumSolde,accountNum)VALUES($valeur,$id)");
             $stmt1=$conn->prepare($rqt1);
             $stmt1->execute();
